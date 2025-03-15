@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=code.leech.pydemo
+Exec=@bindir@/pydemo --gapplication-service

@@ -1,0 +1,8 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+data/code.leech.pydemo.desktop.in
+data/code.leech.pydemo.metainfo.xml.in
+data/code.leech.pydemo.gschema.xml
+src/main.py
+src/window.py
+src/window.ui

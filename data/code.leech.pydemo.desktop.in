@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=pydemo
+Exec=pydemo
+Icon=code.leech.pydemo
+Terminal=false
+Type=Application
+Categories=Utility;
+Keywords=GTK;
+StartupNotify=true
+DBusActivatable=true

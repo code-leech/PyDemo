@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist gettext-domain="pydemo">
+  <enum id="code.leech.pydemo.ThemePreference">
+    <value value="0" nick="default"/>
+    <value value="1" nick="light"/>
+    <value value="2" nick="dark"/>
+  </enum>
 	<schema id="code.leech.pydemo" path="/code/leech/pydemo/">
+	  <key name="theme-preference" enum="code.leech.pydemo.ThemePreference">
+      <default>'dark'</default>
+      <summary>Theme preference</summary>
+      <description>The preferred theme variant.</description>
+    </key>
 	</schema>
 </schemalist>

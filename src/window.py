@@ -19,12 +19,14 @@
 
 from gi.repository import Adw
 from gi.repository import Gtk
+from .themer import PydemoThemer
 
 @Gtk.Template(resource_path='/code/leech/pydemo/window.ui')
 class PydemoWindow(Adw.ApplicationWindow):
     __gtype_name__ = 'PydemoWindow'
 
-    label = Gtk.Template.Child()
+    menubtn = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.menubtn.get_popover().add_child(PydemoThemer(), "themer")

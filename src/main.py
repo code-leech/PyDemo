@@ -35,7 +35,6 @@ class PydemoApplication(Adw.Application):
                          flags=Gio.ApplicationFlags.DEFAULT_FLAGS)
         self.create_action('quit', lambda *_: self.quit(), ['<primary>q'])
         self.create_action('about', self.on_about_action)
-        self.create_action('preferences', self.on_preferences_action)
 
     def do_activate(self):
         """Called when the application is activated.
@@ -50,19 +49,15 @@ class PydemoApplication(Adw.Application):
 
     def on_about_action(self, *args):
         """Callback for the app.about action."""
-        about = Adw.AboutDialog(application_name='pydemo',
+        about = Adw.AboutDialog(application_name='PyDemo',
                                 application_icon='code.leech.pydemo',
-                                developer_name='Carbon751',
+                                developer_name='CodeLeech',
                                 version='0.1.0',
-                                developers=['Carbon751'],
-                                copyright='© 2025 Carbon751')
+                                developers=['Carbon751 https://github.com/code-leech', 'GTK Devs https://gtk.org'],
+                                copyright='© 2025 Carbon751 (CodeLeech)')
         # Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
         about.set_translator_credits(_('translator-credits'))
         about.present(self.props.active_window)
-
-    def on_preferences_action(self, widget, _):
-        """Callback for the app.preferences action."""
-        print('app.preferences action activated')
 
     def create_action(self, name, callback, shortcuts=None):
         """Add an application action.

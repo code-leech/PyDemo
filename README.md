@@ -1,3 +1,3 @@
-# pydemo
+# PyDemo
 
-A description of this project.
+Showcase for PyGObject (Python's GTK Binding)

@@ -51,12 +51,9 @@ class PydemoApplication(Adw.Application):
         """Callback for the app.about action."""
         about = Adw.AboutDialog(application_name='PyDemo',
                                 application_icon='code.leech.pydemo',
-                                developer_name='CodeLeech',
+                                developer_name='CodeLeech (Matteo Pinti)',
                                 version='0.1.0',
-                                developers=['Carbon751 https://github.com/code-leech', 'GTK Devs https://gtk.org'],
-                                copyright='© 2025 Carbon751 (CodeLeech)')
-        # Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
-        about.set_translator_credits(_('translator-credits'))
+                                developers=['Carbon751 https://github.com/code-leech', 'GTK Devs https://gtk.org'])
         about.present(self.props.active_window)
 
     def create_action(self, name, callback, shortcuts=None):

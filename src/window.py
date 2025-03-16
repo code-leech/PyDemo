@@ -17,8 +17,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from gi.repository import Adw
-from gi.repository import Gtk
+from gi.repository import Adw, Gtk, GLib
 from .themer import PydemoThemer
 
 @Gtk.Template(resource_path='/code/leech/pydemo/window.ui')
@@ -30,3 +29,16 @@ class PydemoWindow(Adw.ApplicationWindow):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.menubtn.get_popover().add_child(PydemoThemer(), "themer")
+
+    def button_reset(self, button):
+        button.set_label("Click me!")
+        button.set_css_classes(["suggested-action", "pill", "title-3"])
+        button.set_sensitive(True)
+
+    @Gtk.Template.Callback()
+    def button_cb(self, button):
+        button.set_sensitive(False)
+        button.set_label("Thanks!")
+        button.set_css_classes(["destructive-action", "pill", "title-3"])
+        GLib.timeout_add_seconds(2, self.button_reset, button)
+
